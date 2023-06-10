@@ -3,13 +3,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import {
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
+import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 import WidgetsIcon from "@mui/icons-material/Widgets";
@@ -17,16 +11,7 @@ import WidgetsIcon from "@mui/icons-material/Widgets";
 import LivingIcon from "@mui/icons-material/Living";
 import { MdConveyorBelt } from "react-icons/md";
 import ChildFriendlyIcon from "@mui/icons-material/ChildFriendly";
-import styled from "styled-components";
-
-export const StyledListItem = styled(ListItemButton)({
-  color: "#fff",
-  padding: 0,
-
-  svg: {
-    color: "#fff",
-  },
-});
+import { StyledListItem } from "./accordionStyle";
 
 const childrenData = [
   "Lift 1",

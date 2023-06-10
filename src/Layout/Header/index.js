@@ -1,7 +1,23 @@
 import React, { memo, useState } from "react";
+
 import IconButton from "@mui/material/IconButton";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Avatar, Box, Button, Menu, MenuItem, Typography } from "@mui/material";
+import ArrowBackIosNewSharpIcon from "@mui/icons-material/ArrowBackIosNewSharp";
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import LogoutSharpIcon from "@mui/icons-material/LogoutSharp";
+import ManageAccountsSharpIcon from "@mui/icons-material/ManageAccountsSharp";
+import PrivacyTipSharpIcon from "@mui/icons-material/PrivacyTipSharp";
+import DonutLargeSharpIcon from "@mui/icons-material/DonutLargeSharp";
+
+import UserImage from "../../../src/assets/images/user.svg";
+import EditIcon from "../../../src/assets/svg/edit-icon.svg";
+import SignalIcon from "../../../src/assets/svg/signal-icon.svg";
+import MessageIcon from "../../../src/assets/svg/message-icon.svg";
+import NotificationIcon from "../../../src/assets/svg/notification-icon.svg";
+
 import {
   AppBar,
   ArrowWrapper,
@@ -13,19 +29,6 @@ import {
   User,
   Setting,
 } from "./headerStyle";
-import ArrowBackIosNewSharpIcon from "@mui/icons-material/ArrowBackIosNewSharp";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
-import EditIcon from "../../../src/assets/svg/edit-icon.svg";
-import SignalIcon from "../../../src/assets/svg/signal-icon.svg";
-import MessageIcon from "../../../src/assets/svg/message-icon.svg";
-import NotificationIcon from "../../../src/assets/svg/notification-icon.svg";
-import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
-import UserImage from "../../../src/assets/images/user.svg";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import LogoutSharpIcon from "@mui/icons-material/LogoutSharp";
-import ManageAccountsSharpIcon from "@mui/icons-material/ManageAccountsSharp";
-import PrivacyTipSharpIcon from "@mui/icons-material/PrivacyTipSharp";
-import DonutLargeSharpIcon from "@mui/icons-material/DonutLargeSharp";
 
 const buttonData = [
   {

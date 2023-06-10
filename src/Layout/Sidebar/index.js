@@ -1,37 +1,16 @@
 import React, { memo } from "react";
+
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
+
 import SidebarAccordion from "./SidebarAccordion";
-import styled from "styled-components";
-import { Typography } from "@mui/material";
-import CloseSharpIcon from "@mui/icons-material/CloseSharp";
+import CardTop from "../../Components/Shared/CardTop";
 
 export const accordionData1 = ["Settings", "Recent", "Facility Props"];
 export const accordionData2 = ["Rooms", "Conveyors", "Carriers"];
-
-export const StyledTop = styled("div")({
-  backgroundColor: "#2d2d2d",
-  height: "40px",
-  borderTopLeftRadius: "4px",
-  borderTopRightRadius: "4px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  padding: "0 12px",
-
-  h6: {
-    fontSize: "16px",
-    color: "#fff",
-  },
-
-  svg: {
-    color: "#FFBF3C",
-    cursor: "pointer",
-  },
-});
 
 const Sidebar = ({ openSidebar, setOpenSidebar, toggleDrawer }) => {
   return (
@@ -43,10 +22,7 @@ const Sidebar = ({ openSidebar, setOpenSidebar, toggleDrawer }) => {
       sx={{ transform: "translateX(12px )" }}
     >
       <Box sx={{ width: 250 }} role="presentation">
-        <StyledTop>
-          <Typography variant="h6">Select Elements</Typography>
-          <CloseSharpIcon onClick={toggleDrawer()} />
-        </StyledTop>
+        <CardTop text="Select Elements" toggleDrawer={toggleDrawer} />
         <List>
           {accordionData1.map((text, index) => (
             <ListItem

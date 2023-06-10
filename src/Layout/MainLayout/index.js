@@ -40,7 +40,7 @@ export default function MiniDrawer() {
         setOpenSidebar={setOpenSidebar}
         toggleDrawer={toggleDrawer}
       />
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, px: 2, py: 3 }}>
         <DrawerHeader />
         <Outlet />
       </Box>
