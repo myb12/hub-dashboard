@@ -17,35 +17,29 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function MiniDrawer() {
-  const [open, setOpen] = useState(true);
+  const [openSidebar, setOpenSidebar] = useState(false);
 
-  const handleDrawerToggle = () => {
-    setOpen(!open);
+  const toggleDrawer = () => (event) => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setOpenSidebar(!openSidebar);
   };
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      {/* <AppBar position="fixed" open={open} sx={{ width: "100%" }}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerToggle}
-            edge="start"
-            sx={{
-              marginRight: 5,
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
-      <Header handleDrawerToggle={handleDrawerToggle} open={open} />
-      <Sidebar open={open} />
+      <Header toggleDrawer={toggleDrawer} />
+      <Sidebar
+        openSidebar={openSidebar}
+        setOpenSidebar={setOpenSidebar}
+        toggleDrawer={toggleDrawer}
+      />
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Outlet />

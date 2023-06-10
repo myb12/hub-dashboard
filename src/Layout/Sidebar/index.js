@@ -1,109 +1,78 @@
-import React from "react";
-import { styled } from "@mui/material/styles";
-import MuiDrawer from "@mui/material/Drawer";
+import React, { memo } from "react";
+import Box from "@mui/material/Box";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import SidebarAccordion from "./SidebarAccordion";
+import styled from "styled-components";
+import { Typography } from "@mui/material";
+import CloseSharpIcon from "@mui/icons-material/CloseSharp";
 
-const drawerWidth = 240;
+export const accordionData1 = ["Settings", "Recent", "Facility Props"];
+export const accordionData2 = ["Rooms", "Conveyors", "Carriers"];
 
-const openedMixin = (theme) => ({
-  width: drawerWidth,
-  transition: theme.transitions.create("width", {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen,
-  }),
-  overflowX: "hidden",
-});
+export const StyledTop = styled("div")({
+  backgroundColor: "#2d2d2d",
+  height: "40px",
+  borderTopLeftRadius: "4px",
+  borderTopRightRadius: "4px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  padding: "0 12px",
 
-const closedMixin = (theme) => ({
-  transition: theme.transitions.create("width", {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  overflowX: "hidden",
-  width: `calc(${theme.spacing(7)} + 1px)`,
-  [theme.breakpoints.up("sm")]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
+  h6: {
+    fontSize: "16px",
+    color: "#fff",
+  },
+
+  svg: {
+    color: "#FFBF3C",
+    cursor: "pointer",
   },
 });
 
-const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  width: drawerWidth,
-  flexShrink: 0,
-  whiteSpace: "nowrap",
-  boxSizing: "border-box",
-  ...(open && {
-    ...openedMixin(theme),
-    "& .MuiDrawer-paper": openedMixin(theme),
-  }),
-  ...(!open && {
-    ...closedMixin(theme),
-    "& .MuiDrawer-paper": closedMixin(theme),
-  }),
-}));
-
-const Sidebar = ({ open }) => {
+const Sidebar = ({ openSidebar, setOpenSidebar, toggleDrawer }) => {
   return (
-    <Drawer variant="permanent" open={open}>
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
+    <SwipeableDrawer
+      open={openSidebar}
+      onClose={() => setOpenSidebar(false)}
+      onOpen={() => setOpenSidebar(true)}
+      hideBackdrop
+      sx={{ transform: "translateX(12px )" }}
+    >
+      <Box sx={{ width: 250 }} role="presentation">
+        <StyledTop>
+          <Typography variant="h6">Select Elements</Typography>
+          <CloseSharpIcon onClick={toggleDrawer()} />
+        </StyledTop>
+        <List>
+          {accordionData1.map((text, index) => (
+            <ListItem
+              key={index}
+              disablePadding
+              sx={{ display: "block", mb: 2 }}
             >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: "block" }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
+              <SidebarAccordion text={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {accordionData2.map((text, index) => (
+            <ListItem
+              key={index}
+              disablePadding
+              sx={{ display: "block", mb: 2 }}
             >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Drawer>
+              <SidebarAccordion text={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    </SwipeableDrawer>
   );
 };
 
-export default Sidebar;
+export default memo(Sidebar);

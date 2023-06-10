@@ -62,7 +62,7 @@ const settings = [
   "Logout",
 ];
 
-const Header = ({ handleDrawerToggle, open }) => {
+const Header = ({ toggleDrawer }) => {
   const [anchorElUser, setAnchorElUser] = useState(false);
 
   const toggleUserMenu = (event) => {
@@ -89,7 +89,7 @@ const Header = ({ handleDrawerToggle, open }) => {
   };
 
   return (
-    <AppBar position="fixed" open={open}>
+    <AppBar position="fixed">
       <StyledTool>
         <Box
           sx={{
@@ -108,7 +108,7 @@ const Header = ({ handleDrawerToggle, open }) => {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerToggle}
+            onClick={toggleDrawer()}
             edge="start"
             sx={{
               height: "28px",

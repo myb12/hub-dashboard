@@ -12,9 +12,11 @@ code {
     monospace;
 }
 
-.css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper,
-.css-2dum1v-MuiDrawer-docked .MuiDrawer-paper {
+.MuiDrawer-paperAnchorLeft {
   margin-top: 92px;
+  background-color: #53575a;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 .MuiAppBar-root {
   background-color: #fff;
