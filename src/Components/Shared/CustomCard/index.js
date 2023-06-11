@@ -7,25 +7,11 @@ import ExpandIcon from "../../../../src/assets/svg/share.svg";
 
 import { StyledCard, StyledExpand } from "./customCardStyle";
 
-const CustomCard = ({ card1Data, renderAccordion = null }) => {
+const CustomCard = ({ children, text = "" }) => {
   return (
     <StyledCard>
-      <CardTop text="Conveyor Id - 01" />
-
-      <List>
-        {card1Data.map((data) => (
-          <ListItem sx={{ borderBottom: "1px solid #E8E8E8" }}>
-            <ListItemText
-              primary={data.title}
-              sx={{ span: { fontSize: "14px" } }}
-            />
-            {data?.desc()}
-          </ListItem>
-        ))}
-      </List>
-
-      {!!renderAccordion && <Box sx={{ px: 1.3 }}>{renderAccordion()}</Box>}
-
+      <CardTop text={text} />
+      {children}
       <StyledExpand src={ExpandIcon} alt="Expand" />
     </StyledCard>
   );

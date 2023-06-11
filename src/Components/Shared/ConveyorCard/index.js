@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, List, ListItem, ListItemText } from "@mui/material";
+import { List, ListItem, ListItemText } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -8,84 +8,8 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import CustomCard from "../CustomCard";
-import SmallBox from "./SmallBox";
-
-const card1Data = [
-  {
-    title: "Mode:",
-    desc: () => (
-      <ListItemText
-        primary="Auto"
-        sx={{ color: "#1D7A32", span: { fontSize: "14px" } }}
-      />
-    ),
-  },
-  {
-    title: "Status:",
-    desc: () => (
-      <ListItemText
-        primary="Waiting"
-        sx={{ color: "#FF7639", span: { fontSize: "14px" } }}
-      />
-    ),
-  },
-  {
-    title: "Task Type:",
-    desc: () => (
-      <ListItemText
-        primary="Idle"
-        sx={{ color: "#125598", span: { fontSize: "14px" } }}
-      />
-    ),
-  },
-  {
-    title: "Why Not Working:",
-    desc: () => "",
-  },
-  {
-    title: "Start Condition:",
-    desc: () => "",
-  },
-  {
-    title: "Pallet Sensors:",
-    desc: () => (
-      <Box sx={{ display: "flex" }}>
-        <SmallBox text="LO" />
-        <SmallBox text="LO" rounded={true} />
-        <SmallBox text="RO" rounded={true} />
-        <SmallBox text="RO" />
-        <SmallBox text="RI" />
-      </Box>
-    ),
-  },
-  {
-    title: "Job Status:",
-    desc: () => (
-      <ListItemText
-        primary="Unknown"
-        sx={{ color: "#838296", span: { fontSize: "14px" } }}
-      />
-    ),
-  },
-  {
-    title: "Active Shelf:",
-    desc: () => (
-      <ListItemText
-        primary="0"
-        sx={{ color: "#838296", span: { fontSize: "14px" } }}
-      />
-    ),
-  },
-  {
-    title: "PLC Pallet Exists",
-    desc: () => <SmallBox text="P" />,
-  },
-
-  {
-    title: "Front Lock Status:",
-    desc: () => "",
-  },
-];
+import { conveyorData } from "../../../data/fakeData";
+import CardList from "../CustomCard/CardList";
 
 const accordionDetailData = [
   "Room 01 : Oda 1",
@@ -148,13 +72,13 @@ const AccordionList = () => {
   );
 };
 
-const Card1 = () => {
+const ConveyorCard = ({ text }) => {
   return (
-    <CustomCard
-      card1Data={card1Data}
-      renderAccordion={() => <AccordionList />}
-    />
+    <CustomCard text={text}>
+      <CardList data={conveyorData} />
+      <AccordionList />
+    </CustomCard>
   );
 };
 
-export default Card1;
+export default ConveyorCard;
