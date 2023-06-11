@@ -1,8 +1,7 @@
 import React from "react";
 
-import { Box, List, ListItem, ListItemText } from "@mui/material";
-
 import CardTop from "../CardTop";
+
 import ExpandIcon from "../../../../src/assets/svg/share.svg";
 
 import { StyledCard, StyledExpand, StyledNoData } from "./customCardStyle";

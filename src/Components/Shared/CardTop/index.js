@@ -1,9 +1,11 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { StyledTop } from "./cardTopStyle";
+
 import { BiMessageRoundedError } from "react-icons/bi";
 import { FiSettings } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
+
+import { StyledTop } from "./cardTopStyle";
 
 const CardTop = ({ toggleDrawer = null, text }) => {
   const isSidebar = !!toggleDrawer;

@@ -1,15 +1,11 @@
-import { Box, InputAdornment, TextField } from "@mui/material";
 import React, { useState } from "react";
-import CustomButton from "../../CustomButton";
-import styled from "styled-components";
+import { Box, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 
-const StylesBtnWrapper = styled("div")({
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gridGap: "8px",
-});
+import CustomButton from "../../CustomButton";
+
+import { StyledBtnWrapper } from "./commandsStyles";
 
 const Commands = () => {
   const [showClearIcon, setShowClearIcon] = useState("none");
@@ -45,12 +41,12 @@ const Commands = () => {
           ),
         }}
       />
-      <StylesBtnWrapper>
+      <StyledBtnWrapper>
         <CustomButton text="Bring Car" bgColor="#125598" />
         <CustomButton text="Exit Car" bgColor="#53575A" />
         <CustomButton text="Delete Car" bgColor="#D32F2F" />
         <CustomButton text="Retrivial Cancel" bgColor="#E24747" />
-      </StylesBtnWrapper>
+      </StyledBtnWrapper>
     </Box>
   );
 };

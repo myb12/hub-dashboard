@@ -1,18 +1,5 @@
-import { Button } from "@mui/material";
 import React from "react";
-import styled from "styled-components";
-
-const StyledButton = styled(Button)((props) => ({
-  background: props.bgColor,
-  fontSize: "14px",
-  padding: "10px",
-  maxHeight: "44px",
-  lineHeight: "1.2",
-
-  "&:hover": {
-    background: props.bgColor,
-  },
-}));
+import { StyledButton } from "./customButtonStyles";
 
 const CustomButton = ({ text, bgColor }) => {
   return (
