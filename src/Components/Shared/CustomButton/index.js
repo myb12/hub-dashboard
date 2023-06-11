@@ -8,6 +8,10 @@ const StyledButton = styled(Button)((props) => ({
   padding: "10px",
   maxHeight: "44px",
   lineHeight: "1.2",
+
+  "&:hover": {
+    background: props.bgColor,
+  },
 }));
 
 const CustomButton = ({ text, bgColor }) => {

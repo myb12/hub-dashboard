@@ -5,13 +5,25 @@ import { Box, List, ListItem, ListItemText } from "@mui/material";
 import CardTop from "../CardTop";
 import ExpandIcon from "../../../../src/assets/svg/share.svg";
 
-import { StyledCard, StyledExpand } from "./customCardStyle";
+import { StyledCard, StyledExpand, StyledNoData } from "./customCardStyle";
 
-const CustomCard = ({ children, text = "" }) => {
+const CustomCard = ({
+  children = null,
+  text = "",
+  noData = false,
+  height = "",
+  bg = "",
+}) => {
   return (
-    <StyledCard>
+    <StyledCard bg={bg}>
       <CardTop text={text} />
-      {children}
+      {children ? (
+        children
+      ) : (
+        <StyledNoData height={height}>
+          {noData && <span>No data to display</span>}
+        </StyledNoData>
+      )}
       <StyledExpand src={ExpandIcon} alt="Expand" />
     </StyledCard>
   );

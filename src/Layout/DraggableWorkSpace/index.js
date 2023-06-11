@@ -1,7 +1,13 @@
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
+import CustomCard from "../../Components/Shared/CustomCard";
+import CardList from "../../Components/Shared/CustomCard/CardList";
+import ConveyorCard from "../../Components/Shared/ConveyorCard";
+import Commands from "../../Components/Shared/CustomCard/Commands";
 import PieChart from "../../Components/Shared/PieChart";
 import BarChart from "../../Components/BarChart";
+
 import {
   barChart,
   carrierPropsData,
@@ -9,10 +15,6 @@ import {
   palleteData,
   pieChart,
 } from "../../data/fakeData";
-import CustomCard from "../../Components/Shared/CustomCard";
-import CardList from "../../Components/Shared/CustomCard/CardList";
-import ConveyorCard from "../../Components/Shared/ConveyorCard";
-import Commands from "../../Components/Shared/CustomCard/Commands";
 
 const onDragEnd = (result, columns, setColumns) => {
   if (!result.destination) return;
@@ -72,16 +74,20 @@ const renderCards = (position) => {
       );
 
     case "row3-1":
-      return (
-        <div style={{ backgroundColor: "tomato", height: 450 }}>Panel 3D</div>
-      );
+      return <CustomCard bg="#2D2C3F" height="450px" text="Panel 3D" />;
+    case "row4-1":
+      return <CustomCard noData height="150px" text="Room Sensors1" />;
+    case "row4-2":
+      return <CustomCard noData height="350px" text="Exit List" />;
+    case "row4-3":
+      return <CustomCard noData height="150px" text="Alarms" />;
 
     default:
       return position;
   }
 };
 
-function Customizable() {
+const DraggableWorkSpace = () => {
   const [columns, setColumns] = useState(draggableLayoutData);
 
   return (
@@ -172,6 +178,6 @@ function Customizable() {
       </div>
     </DragDropContext>
   );
-}
+};
 
-export default Customizable;
+export default DraggableWorkSpace;

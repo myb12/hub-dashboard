@@ -1,7 +1,5 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-
-import CloseSharpIcon from "@mui/icons-material/CloseSharp";
 import { StyledTop } from "./cardTopStyle";
 import { BiMessageRoundedError } from "react-icons/bi";
 import { FiSettings } from "react-icons/fi";
@@ -12,12 +10,12 @@ const CardTop = ({ toggleDrawer = null, text }) => {
 
   return (
     <StyledTop sidebar={isSidebar}>
-    <Typography variant="h6">{text}</Typography>
+      <Typography variant="h6">{text}</Typography>
       <Box>
         {!isSidebar && (
           <>
-            <FiSettings />
-            <BiMessageRoundedError />
+            <FiSettings title="Setttings" />
+            <BiMessageRoundedError title="Need help?" />
           </>
         )}
         <GrClose onClick={toggleDrawer && toggleDrawer()} />
