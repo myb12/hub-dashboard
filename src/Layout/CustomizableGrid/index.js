@@ -6,6 +6,7 @@ import {
   barChart,
   carrierPropsData,
   draggableLayoutData,
+  palleteData,
   pieChart,
 } from "../../data/fakeData";
 import CustomCard from "../../Components/Shared/CustomCard";
@@ -45,6 +46,12 @@ const renderCards = (position) => {
           <PieChart data={pieChart.data} options={pieChart.option} />
         </CustomCard>
       );
+    case "col3-2-1":
+      return (
+        <CustomCard text="Pallet Id - 11">
+          <CardList data={palleteData} />
+        </CustomCard>
+      );
     case "col3-2-2":
       return (
         <CustomCard text="Fill Rate of Systems">
@@ -59,7 +66,7 @@ const renderCards = (position) => {
       );
     case "row2-2":
       return (
-        <CustomCard text="Carrier Props">
+        <CustomCard text="P. Id: 11 Commands">
           <Commands />
         </CustomCard>
       );

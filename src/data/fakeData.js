@@ -1,5 +1,6 @@
 import { Box, ListItemText } from "@mui/material";
 import SmallBox from "../Components/Shared/ConveyorCard/SmallBox";
+import { AiFillCloseSquare, AiFillCheckSquare } from "react-icons/ai";
 
 export const draggableLayoutData = {
   column1: {
@@ -223,6 +224,161 @@ export const carrierPropsData = [
         primary="0 rpm I 0 m/s"
         sx={{ color: "#838296", span: { fontSize: "14px" } }}
       />
+    ),
+  },
+];
+
+export const palleteData = [
+  {
+    title: "Plate No:",
+    desc: () => (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          svg: {
+            fontSize: "24px",
+            ml: 1,
+          },
+        }}
+      >
+        <ListItemText
+          primary="GJZ-0196"
+          sx={{
+            marginRight: "32px",
+            color: "#838296",
+            span: { fontSize: "14px" },
+          }}
+        />
+        <AiFillCheckSquare style={{ color: "#61BD63" }} />{" "}
+        <AiFillCloseSquare style={{ color: "#DC3545" }} />
+      </Box>
+    ),
+  },
+  {
+    title: "Ticket No:",
+    desc: () => (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          svg: {
+            fontSize: "24px",
+            ml: 1,
+          },
+        }}
+      >
+        <ListItemText
+          primary="TKT-0569"
+          sx={{
+            marginRight: "32px",
+            color: "#838296",
+            span: { fontSize: "14px" },
+          }}
+        />
+        <AiFillCheckSquare style={{ color: "#00000033" }} />{" "}
+        <AiFillCloseSquare style={{ color: "#DC3545" }} />
+      </Box>
+    ),
+  },
+  {
+    title: "CH Cat:",
+    desc: () => (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          svg: {
+            fontSize: "24px",
+            ml: 1,
+          },
+        }}
+      >
+        <ListItemText
+          primary="Sedan"
+          sx={{
+            marginRight: "32px",
+            color: "#838296",
+            span: { fontSize: "14px" },
+          }}
+        />
+        <AiFillCheckSquare style={{ color: "#00000033" }} />{" "}
+        <AiFillCloseSquare style={{ color: "#DC3545" }} />
+      </Box>
+    ),
+  },
+  {
+    title: "Car Weight:",
+    desc: () => (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          svg: {
+            fontSize: "24px",
+            ml: 1,
+          },
+        }}
+      >
+        <ListItemText
+          primary="16"
+          sx={{
+            marginRight: "32px",
+            color: "#838296",
+            span: { fontSize: "14px" },
+          }}
+        />
+        <AiFillCheckSquare style={{ color: "#00000033" }} />{" "}
+        <AiFillCloseSquare style={{ color: "#DC3545" }} />
+      </Box>
+    ),
+  },
+  {
+    title: "Entrance Time:",
+    desc: () => (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          svg: {
+            fontSize: "24px",
+            ml: 1,
+          },
+        }}
+      >
+        <AiFillCheckSquare style={{ color: "#00000033" }} />{" "}
+        <AiFillCloseSquare style={{ color: "#DC3545" }} />
+      </Box>
+    ),
+  },
+  {
+    title: "Request Time:",
+    desc: () => "",
+  },
+  {
+    title: "Shelf Base ID:",
+    desc: () => (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          svg: {
+            fontSize: "24px",
+            ml: 1,
+          },
+        }}
+      >
+        <ListItemText
+          primary="523"
+          sx={{
+            marginRight: "32px",
+            color: "#838296",
+            span: { fontSize: "14px" },
+          }}
+        />
+        <AiFillCheckSquare style={{ color: "#00000033" }} />{" "}
+        <AiFillCloseSquare style={{ color: "#DC3545" }} />
+      </Box>
     ),
   },
 ];
