@@ -7,6 +7,7 @@
 ### To run locally
 
 - Simply clone the repository. Run "npm install" command.
+- If you encounter the npm ERR! ERESOLVE error with an "unable to resolve dependency tree" message, add  "--legacy-peer-deps" flag with "npm install" command like: "npm install --legacy-peer-deps" 
 - Run "npm start" command.
 
 ### Tools used to build this project
